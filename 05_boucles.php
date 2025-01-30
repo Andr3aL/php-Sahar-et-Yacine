@@ -239,35 +239,38 @@
                 // Exercice : créer un tableau qui affiche 0 à 9 sur une seule ligne
 
 
+                    echo '<table border="2" cellpadding="10" cellspacing="2">
+                        <tr>';
+                            for ($head=1; $head <= 10 ; $head++) {
+                                    echo "<th>Colonne n°$head</th>";
+                                }
+                    echo '</tr>
+                        <tr>';
+                            for ($def=0; $def <= 9 ; $def++) {
+                                echo "<td align='center'>$def</td>";
+                            }
+                    echo '</tr>
+                    </table>';
+                        
+
                 ?>
 
-                    <table>
+                    <table border="2" cellpadding="10" cellspacing="2">
                         <tr>
                             <?php 
                                 for ($head=1; $head <= 10 ; $head++) {
-                                    echo "<th>$head</th>";
+                                    echo "<th>Colonne n°$head</th>";
                                 }
                             ?>
                         </tr>
                         <tr>
                             <?php 
                                 for ($def=0; $def <= 9 ; $def++) {
-                                    echo "<td>$def</td>";
+                                    echo "<td align='center'>$def</td>";
                                 }
                             ?>
                         </tr>
                     </table>
-
-
-
-
-
-
-
-
-
-
-
 
 
             </div>
