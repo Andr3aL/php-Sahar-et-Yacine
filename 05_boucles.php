@@ -239,11 +239,36 @@
                 // Exercice : créer un tableau qui affiche 0 à 9 sur une seule ligne
 
 
-
-
-
-
                 ?>
+
+                    <table>
+                        <tr>
+                            <?php 
+                                for ($head=1; $head <= 10 ; $head++) {
+                                    echo "<th>$head</th>";
+                                }
+                            ?>
+                        </tr>
+                        <tr>
+                            <?php 
+                                for ($def=0; $def <= 9 ; $def++) {
+                                    echo "<th>$def</th>";
+                                }
+                            ?>
+                        </tr>
+                    </table>
+
+
+
+
+
+
+
+
+
+
+
+
 
             </div>
 
