@@ -252,7 +252,7 @@
                         <tr>
                             <?php 
                                 for ($def=0; $def <= 9 ; $def++) {
-                                    echo "<th>$def</th>";
+                                    echo "<td>$def</td>";
                                 }
                             ?>
                         </tr>
