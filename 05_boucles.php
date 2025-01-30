@@ -136,7 +136,7 @@
                                 ?>
                                     <option value="">
                                         <?php echo $k; ?>
-                                        <?php echo $k; ?>
+                                        <?php //echo $k; ?>
                                     </option>
 
                                     <!-- Autre façon de faire -->
@@ -149,6 +149,22 @@
                         </select>
                     </form>
 
+            </div>
+
+            <div class="col-sm-12 col-md-6">
+                <h2>La boucle for</h2>
+                <p>La boucle for , comme toutes les boucles, sert à répéter un morceau de code tant que la condition n'est pas respectée. Sa structure est cependant différente :</p>
+                    <ol>
+                        <li><span>Initialisation de la variable</span></li>
+                        <li><span>Condition de sortie</span></li>
+                        <li><span>Incrémentation de la variable</span></li>
+                    </ol>
+            
+
+                <?php
+                for ($i=0; $i <15 ; $i++) { // je lance ma boucle for avec les options citées au dessus 
+                            echo "<p>Tour n° $i</p>"; // Dans les accolades, je précise le code à répéter
+                        }
 
 
 
@@ -160,16 +176,77 @@
 
 
 
+                // Exercice : Créer en PHP un formulaire de sélection de date de naissance (jour - mois - année)
+
+
+                        // 3 select html (un pour le jour, un pour le mois et un pour l'année)
+
+                
 
 
 
 
 
 
+            //   echo'  <form action="">'
+                
+            //         <select class="form-select form-select-lg" name="" id="">
                     
+            //         </select>
+                
+            //     </form>
 
+
+
+
+
+
+
+
+                
+
+                echo "<form>
+                    <label for='jour'>Jour de naissance</label>
+                    <select class='form-select form-select-lg' name='jour' id='jour'>";
+
+                    for ($jour=1; $jour <= 31 ; $jour++) {
+                        echo "<option value='$jour'>$jour</option>";
+                    }
+
+                echo '</select>
+                
+                <label for="mois">Mois de naissance</label>
+                <select class="form-select form-select-lg" name="mois" id="mois">';
+
+                    for ($mois=1; $mois <= 12 ; $mois++) {
+                        echo "<option value=\"$mois\">$mois</option>";
+                    }
+
+                echo '</select>
+                
+                <label for="annee">Année de naissance</label>
+                <select class="form-select form-select-lg" name="annee" id="annee">';
+
+                    for ($annee=2025; $annee > 1969 ; $annee--) {
+                        echo "<option value=\"$annee\">$annee</option>";
+                    }
+
+                echo '</select> 
+                </form>';
+
+
+
+                // Exercice : créer un tableau qui affiche 0 à 9 sur une seule ligne
+
+
+
+
+
+
+                ?>
 
             </div>
+
         </div>
            
         
