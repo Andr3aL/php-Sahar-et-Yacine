@@ -107,10 +107,9 @@
                     <!-- Exercice bonus : faire la même chose dans l'autre sens, de 2025 à 1920 -->
 
                     <?php $j = 2025; ?>
-                    
-
+                
                     <form>
-                        <select class="form-select form-select-lg" name="" id="">';
+                        <select class="form-select form-select-lg" name="" id="">;
 
                             <?php
                                 while($j >= 1920) {
@@ -121,6 +120,53 @@
 
                         </select>
                     </form>
+
+
+
+                    <!-- correction -->
+
+
+
+                    <form action="#" class="mt-3">
+                        <select class="form-select form-select-lg">
+
+                                <?php
+                                    $k = 2025;
+                                    while($k > 1919) {
+                                ?>
+                                    <option value="">
+                                        <?php echo $k; ?>
+                                        <?php echo $k; ?>
+                                    </option>
+
+                                    <!-- Autre façon de faire -->
+                                    <!-- <option value="<?//= $k; ?>"<?//= $k; ?>></option> -->
+
+                                <?php
+                                    $k--;
+                                    }
+                                ?>
+                        </select>
+                    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    
 
 
             </div>
