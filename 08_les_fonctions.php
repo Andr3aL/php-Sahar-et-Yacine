@@ -96,6 +96,44 @@ require_once("inc/header.inc.php");
 
             echo $maChaine.'<br>';
 
+            $maChaine = str_ireplace('bonjour', 'Hello', $maChaine);
+
+            echo $maChaine.'<br>';
+
+            // Vérifier si la chaine contient un mot en particulier
+
+            echo str_contains($maChaine, 'JS').'<br>';
+            // Affiche 1 (cad true)
+            var_dump(str_contains($maChaine, 'JS')).'<br>';
+            // Affiche bool(true) directement grâce à var_dump()
+            // Les paramètres : la variable qui contient la chaine et le mot à vérifier. Sensible à la casse
+            // Le résultat est un boolean : true ou false (trouvé ou pas)
+
+            echo '<br>';
+
+            // Vérifier si la chaine commence par ce que vous lui passez dans les paramètres : 
+
+            var_dump(str_starts_with($maChaine, 'Hel'));
+            // Affiche bool(true)
+            echo '<br>';
+            
+            // Vérifier si la chaine se termine par ce que vous lui passez dans les paramètres : 
+
+            var_dump(str_ends_with($maChaine, '!'));
+            // Affiche bool(true)
+            echo '<br>';
+
+            // Supprimer les espaces en début et fin de chaine : 
+            $testTrim = "   Je suis une phrase avec des espaces au début et à la fin   ";
+            echo $testTrim . '<br>';
+            echo strlen($testTrim) . '<br>';
+            // 64
+
+            $nouveau = trim($testTrim);
+            echo $nouveau . '<br>';
+            echo strlen($nouveau) . '<br>';
+            // 58
+
             
 
 
