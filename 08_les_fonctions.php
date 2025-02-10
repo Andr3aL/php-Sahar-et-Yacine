@@ -182,12 +182,20 @@ require_once("inc/header.inc.php");
 
                 // }
 
+
+
+
+
                 // Ajouter des valeurs à la fin du tableau : 
                 array_push($tableau, 'Vert', 'Noir');
 
                 echo '<pre>';
                 // var_dump($tableau);
                 echo '</pre>';
+
+
+
+
 
                 // Ajouter des valeurs au début du tableau : 
                 
@@ -196,6 +204,10 @@ require_once("inc/header.inc.php");
                 echo '<pre>';
                 // var_dump($tableau);
                 echo '</pre>';
+
+
+
+
 
                 // Supprimer la dernière valeur du tableau : 
 
@@ -208,6 +220,9 @@ require_once("inc/header.inc.php");
                 // Tableau après la suppression de la dernière valeur
                 // var_dump($tableau);
                 echo '</pre>';
+
+
+
 
                 // Supprimer la première valeur du tableau : 
 
@@ -228,6 +243,8 @@ require_once("inc/header.inc.php");
                 echo '</pre>';
 
 
+
+
                 // Diviser un tableau en plusieurs parties : 
 
                 $tableau2 = array_chunk($tableau, 3, true);
@@ -236,6 +253,9 @@ require_once("inc/header.inc.php");
                 echo '<pre>';
                 // var_dump($tableau2);
                 echo '</pre>';
+
+
+
 
                 // Compter les éléments dans un tableau : 
 
@@ -249,6 +269,9 @@ require_once("inc/header.inc.php");
                 var_dump($tableau);
                 echo '</pre>';
 
+
+
+
                 // Vérifier une valeur dans un tableau : 
 
                 $result = in_array('Bleu', $tableau);
@@ -257,6 +280,9 @@ require_once("inc/header.inc.php");
                 // var_dump($result);
                 echo '</pre>';
 
+
+
+
                 // Vérifier si une clé existe dans un tableau : 
 
                 $result = array_key_exists(2, $tableau);
@@ -264,6 +290,9 @@ require_once("inc/header.inc.php");
                 echo '<pre>';
                 var_dump($result);
                 echo '</pre>';
+
+
+
 
                 // Créer un tableau à partir de deux tableaux : 
 
@@ -290,6 +319,25 @@ require_once("inc/header.inc.php");
 
 
 
+
+                // Transformer une chaine de caractères en tableau :
+
+                $maChaine2 = "Je me transforme en tableau";
+                // Le séparateur , dans la chaîne, et la variable de la chaine à scinder
+                $chaineEnTableau = explode(' ', $maChaine2);
+
+                echo '<pre>';
+                var_dump($chaineEnTableau);
+                echo '</pre>';
+
+
+
+
+
+
+
+
+                
                 ?>
 
         </div>
