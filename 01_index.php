@@ -39,6 +39,12 @@
           <li class="nav-item">
             <a class="nav-link" href="06_inclusions.php">Les importations des fichier</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="07_les_tableaux.php">Les tableaux en PHP</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="08_les_fonctions.php">Les fonctions en PHP</a>
+          </li>
         </ul>
        
       </div>
