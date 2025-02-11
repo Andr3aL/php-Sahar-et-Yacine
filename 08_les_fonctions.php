@@ -523,6 +523,8 @@ require_once("inc/header.inc.php");
     </div>
 
     <div class="row">
+
+        
           <h2 class="my-5">3- Portée des variables dans les fonctions</h2>
           <div class="col-sm-12 col-md-4">
                <h3 class="text-primary text-center mb-5">Variable locale</h3>
@@ -540,7 +542,7 @@ require_once("inc/header.inc.php");
                maFonction();
 
                echo "<p> La variable \$a  = $a .</p>";
-               //  echo "<p> La variable \$b  = $b .</p>"; // je demande à afficher la variable $b qui est définie dans la fonction => affiche variable indéfinie : on ne peut pas accéder à cette variable car elle n'est connue que à l'intérieur de la fonction
+                // echo "<p> La variable \$b  = $b .</p>"; // je demande à afficher la variable $b qui est définie dans la fonction => affiche variable indéfinie : on ne peut pas accéder à cette variable car elle n'est connue que à l'intérieur de la fonction
                ?>
           </div>
           <div class="col-sm-12 col-md-4">
@@ -557,6 +559,7 @@ require_once("inc/header.inc.php");
                     echo "<p> La variable \$b  = $b .</p>"; // Affiche 3
                     $a = 8;
                }
+               
                maFonction2();
 
                echo "<p> La variable \$a  = $a .</p>";
@@ -582,11 +585,61 @@ require_once("inc/header.inc.php");
                maFonction3();
                maFonction3();
                maFonction3();
+               
+
+               ?>
+          </div>
+     </div>
+
+     <div class="row">
+          <div class="col-sm-12">
+               <h2 class="my-5">4- Typage des paramètres dans les fonctions</h2>
+               <ul>
+                    <li>Dans nos fonctions on peut ajouter des contraintes de type sur les arguments et sur les valeurs de retour de fonction</li>
+                    <li>Le typage permet un débogage du code plus rapide. En effet, si vous ne transmettez pa le bon type de paramétre à votre fonction, ou si elle ne retourne pas le bon type, une erreur se déclenchera immédiatement au de la fonction. Sinon , vous pourriez avoir une cascades d'erreurs non détéctés et retournant un résultat faux.</li>
+               </ul>
+               <?php
+
+               function prix(int $val): void
+               { // La fonction attends un entier en argument (int $val) et ne retourne rien void
+
+                    echo "<p>Cet objet coûte $val euros</p>";
+               }
+               prix(3); // AFfiche la chaîne de caractére avec la subtitution de la variable à l(intérieur)
+
+               // prix('Andrea'); // l'appel avec une chîne déclenche un TypeError car la fonction attends un nombre entier en paramètre
+
+
+               //On peut déclarer une union de type en écrivant plusieurs type et en les séparent par des pipes
+
+               
+               function cout(int|string $val): void
+               {
+
+                    echo "<p>Cet objet coûte $val euros</p>";
+               }
+               cout(6);
+               cout('Andrea');
+
+
+               function diviser(int $nbr1, int $nbr2): string
+               {
+
+                    echo $nbr2 . '<br>';
+                    echo  $nbr1 / $nbr2 . '<br>';
+                    return " le résultat de \$nbr1 / \$nbr2 = " . $nbr1 / $nbr2;
+               }
+
+               echo diviser(9, 2);
 
                ?>
           </div>
      </div>
     
+
+
+
+
 
 </main>
 
