@@ -508,13 +508,18 @@ require_once("inc/header.inc.php");
                 // certains paramétres peuvent ne pas être passés. Une valeur est fournie lors de la dérclaration.
                 // Afin de se servir d'un paramètre optionnel il faut utiliser les arguments nommées
        
-                function bonjour3($bonjour = "Salut", $prenom, $nom)
+                function bonjour3($prenom, $nom, $bonjour = "Salut")
                 {
                      //Sans les paramétres nommés je suis obligée de mettre le paramétre optionnel à la fin des paramétres dans les () de la fonction
        
                      echo "<p> $bonjour $prenom $nom</p>";
                 }
+
+                bonjour3('Hello', 'Andrea', 'LEO');
+
                 bonjour3(prenom: 'Andrea', nom: 'LEO', bonjour: 'Hello');
+
+                bonjour3(prenom: 'Alexandre', nom: 'CAVET');
 
 
             ?>
@@ -612,7 +617,7 @@ require_once("inc/header.inc.php");
 
                //On peut déclarer une union de type en écrivant plusieurs type et en les séparent par des pipes
 
-               
+
                function cout(int|string $val): void
                {
 
@@ -621,7 +626,6 @@ require_once("inc/header.inc.php");
                cout(6);
                cout('Andrea');
 
-
                function diviser(int $nbr1, int $nbr2): string
                {
 
@@ -629,8 +633,78 @@ require_once("inc/header.inc.php");
                     echo  $nbr1 / $nbr2 . '<br>';
                     return " le résultat de \$nbr1 / \$nbr2 = " . $nbr1 / $nbr2;
                }
-
+               // le return ne permet pas d'afficher directement le resultat de la division car il retourne une chaîne de caractères
+               // c'est pourquoi on appelle la fonction dans un echo afin d'afficher le resultat
                echo diviser(9, 2);
+
+               echo '<hr>';
+
+               ##########################################################
+               // déclaration de la fonction
+               function creer_utilisateur(string $prenom, 
+                                          string $nom, 
+                                          string $email,
+                                          string $mot_de_passe,
+                                          bool $est_admin = false, // paramètre optionnel (= a une valeur par défaut) (toujours mis à la fin)
+                                          ?string $telephone = null) // paramètre optionnel (= a une valeur par défaut) (toujours mis à la fin)
+                                          {
+                                            // Création d'un tableau associatif
+                                            // "Une clé correspond à une valeur"
+                                            $utilisateur = [
+                                              'prenom' => $prenom,
+                                              'nom' => $nom,
+                                              'email' => $email,
+                                              'mot_de_passe' => $mot_de_passe,
+                                              'est_admin' => $est_admin,
+                                              'telephone' => $telephone
+                                            ];
+
+                                            return $utilisateur;
+                                          }
+
+                // 1 - Appel avec tous les paramètres : 
+
+                $utilisateur1 = creer_utilisateur(
+                                                  prenom: 'Hawa',
+                                                  nom: 'KONE',
+                                                  email: 'hawa@exemple.com',
+                                                  mot_de_passe: '123456',
+                                                  est_admin: true,
+                                                  telephone: '0123456789'
+                                                );
+
+                echo '<pre>';
+                var_dump($utilisateur1);
+                echo '</pre>';
+
+                // 2 - Appel sans les paramètres optionnels : 
+
+                $utilisateur2 = creer_utilisateur(
+                                                  prenom: 'Roger',
+                                                  nom: 'DAVIES',
+                                                  email: 'roger@gmail.com',
+                                                  mot_de_passe: '4578ab'
+                                                );
+
+                echo '<pre>';
+                var_dump($utilisateur2);
+                echo '</pre>';
+                // Affiche quand même les paramètres optionnels est_admin et telephone dans leur version "par défaut", respectivement bool(false) et NULL
+
+
+                // 3 - Appel avec les paramètres dans un ordre différent : 
+
+                $utilisateur3 = creer_utilisateur(
+                                                  email: 'ouarda@hotmail.fr',
+                                                  telephone: '0123456789',
+                                                  mot_de_passe: 'avfg25',
+                                                  nom: 'CHIED',
+                                                  prenom: 'Ouarda',
+                                                );
+
+                echo '<pre>';
+                var_dump($utilisateur3);
+                echo '</pre>';
 
                ?>
           </div>
